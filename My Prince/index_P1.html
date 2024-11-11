@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Website</title>
+
+    <style>
+        /* Gradient background for the entire page */
+        body {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Center content vertically and horizontally */
+        .container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Button with hover effect */
+        .hover-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease-in-out, transform 0.2s;
+        }
+
+        .hover-button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        /* Fade-in effect on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section styling */
+        .content-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section with Button -->
+    <div class="container">
+        <h1>Welcome to My Interactive Website</h1>
+        <button class="hover-button">Hover over Me!</button>
+    </div>
+
+    <!-- Scroll Effect Section -->
+    <div class="content-section fade-in">
+        Scroll down to reveal this content!
+    </div>
+
+    <div class="content-section fade-in">
+        Another section with a cool fade-in effect!
+    </div>
+
+    <script>
+        // Function to reveal elements on scroll
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((element) => {
+                const rect = element.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Trigger the scroll event listener
+        window.addEventListener('scroll', revealOnScroll);
+    </script>
+
+</body>
+
+</html>

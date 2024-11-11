@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince Academy</title>
+
+    <style>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.signup-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.signup-btn:hover {
+  background-color: #0056b3;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.hero p {
+  margin: 10px 0;
+}
+
+.btn-group button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-group button:hover {
+  background-color: #0056b3;
+}
+
+.hero-image img {
+  max-width: 300px;
+  border-radius: 10%;
+}
+
+.courses {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.course-category h3 {
+  margin-bottom: 10px;
+}
+
+.course-category ul {
+  list-style: none;
+  padding: 0;
+}
+
+.course-category li {
+  margin: 5px 0;
+}
+
+    </style>
+
+</head>
+
+<body>
+    <header class="navbar">
+       <div class="hero-image"><img src="Logo.png" width="60" ></div> <div class="logo">Prince Academy</div>
+        <nav>
+            <a href="http://127.0.0.1:3002/all%20(ACP)/Forms(ACP).html">Explore</a>
+            <a href="#">Search</a>
+            <a href="#">Donate</a>
+            <a href="http://127.0.0.1:3002/all%20(ACP)/Forms(ACP).html">Log in</a>
+            <button class="signup-btn">Sign up</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>For every student, every classroom.<br>Real results.</h1>
+            <p>We’re a nonprofit with the mission to provide a free, world-class education for anyone, anywhere.</p>
+            <div class="btn-group">
+                <button>Learners</button>
+                <button>Teachers</button>
+                <button>Parents</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="student-image.png" alt="Smiling student">
+        </div>
+    </section>
+
+    <section class="courses">
+        <div class="course-category">
+            <h3>Math (NCERT)</h3>
+            <nav>
+            <ul>
+                
+              <li><a href="https://www.khanacademy.org/math/in-in-class-1st-math-cbse">Class 1</a></li>
+              <li><a href="https://khanacademy.org/math/in-in-class-2nd-math-cbse">Class 2</a></li>
+              <li><a href="https://www.khanacademy.org/math/in-in-class-3rd-math-cbse">Class 3</a></li>
+              <li><a href="https://www.khanacademy.org/math/in-in-class-4th-math-cbse">Class 4</a></li>
+              <li><a href="https://www.khanacademy.org/math/in-in-class-5th-math-cbse">Class 5</a></li>
+              <li><a href="https://www.khanacademy.org/math/class-6-ncf">Class 6 (2024)</a></li>
+              <li><a href="https://www.khanacademy.org/math/ncert-class-7">Class 7</a></li>
+              <li><a href="https://khanacademy.org/math/ncert-class-8">Class 8</a></li>
+              <li><a href="https://www.khanacademy.org/math/ncert-class-9">Class 9</a></li>
+              <li><a href="https://www.khanacademy.org/math/ncert-class-10">Class 10</a></li>
+              <li><a href="https://www.khanacademy.org/math/ncert-class-11">Class 11</a></li>
+              <li><a href="https://www.khanacademy.org/math/ncert-class-12">Class 12</a></li>
+  
+            </ul>
+        </nav>
+        </div>
+
+        <div class="course-category">
+            <h3>All State Boards</h3>
+            <ul>
+                <li><a href="https://www.khanacademy.org/math/content-pa-1">Punjab</a></li>
+                <li><a href="https://www.khanacademy.org/math/content-up">Uttar Pradesh</a></li>
+                <li><a href="https://www.khanacademy.org/math/content-mr-1">Maharashtra</a></li>
+                <li><a href="https://www.khanacademy.org/math/math-assam-1">Assam</a></li>
+                <li><a href="https://www.khanacademy.org/math/math-od">Odisha</a></li>
+                <li><a href="https://www.khanacademy.org/math/hinglish">NCERT (Hinglish)</a></li>
+            </ul>
+        </div>
+
+        <div class="course-category">
+            <h3>Explore More</h3>
+            <ul>
+                <li>Digital SAT</li>
+                <li>Intro to CS - Python</li>
+                <li>Finance</li>
+                <li>Computer Programming</li>
+                <li>Social Media Literacy</li>
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>

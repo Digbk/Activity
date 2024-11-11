@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Interactive Website</title>
+
+    <style>
+        /* Reset & Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        /* Sticky Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #feb47b;
+        }
+
+        /* Dark Mode Styles */
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Hero Section with Animated Background */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: skewX(-15deg);
+            animation: slide 4s infinite linear;
+        }
+
+        @keyframes slide {
+            from {
+                left: -100%;
+            }
+
+            to {
+                left: 100%;
+            }
+        }
+
+        h1 span {
+            color: #ffd700;
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px #ffd700;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #ffd700;
+            }
+        }
+
+        /* Parallax Section */
+        .parallax {
+            height: 100vh;
+            background-image: url('M_F.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s;
+        }
+
+        /* Dark Mode Button */
+        .dark-mode-toggle {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #45a049;
+        }
+
+        /* Intersection Observer Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div>My Website</div>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Welcome to the <span>Future</span> of Web Design</h1>
+    </section>
+
+    <!-- Parallax Section -->
+    <section class="parallax"></section>
+
+    <!-- Content Sections -->
+    <section id="about" class="content fade-in">
+        <h2>About Us</h2>
+        <p>We create innovative and interactive websites with the latest technologies.</p>
+    </section>
+
+    <section id="services" class="content fade-in">
+        <h2>Our Services</h2>
+        <p>We offer web development, app development, and design services to bring your ideas to life.</p>
+    </section>
+
+    <section id="contact" class="content fade-in">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for any web solutions you need!</p>
+    </section>
+
+    <script>
+        // Dark Mode Toggle Function
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        // Intersection Observer for Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        });
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Change Navbar Background on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('Scroll');
+            if (window.scrollY > 50) {
+                nav.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                nav.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
